@@ -4,6 +4,7 @@ import { puntoInicial } from "../utils/PuntoInicial";
 import { useEffect, useState } from "react";
 import type { PosicionI } from "../interface/ruta";
 import { iconoMiUbicacion } from "../utils/iconosLeaflet";
+import { BuscarlorLeaflet } from "../components/BuscarlorLeaflet";
 
 export const MapaRutaPage = () => {
     const [punto, setPunto] = useState<PosicionI | null>(null);
@@ -40,6 +41,7 @@ export const MapaRutaPage = () => {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution="&copy; OpenStreetMap contributors"
                     />
+                    <BuscarlorLeaflet/>
                     <Marker position={posicionInicial} icon={iconoMiUbicacion}>
                         <Popup>Estás aquí</Popup>
                     </Marker>
