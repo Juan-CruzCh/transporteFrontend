@@ -8,7 +8,6 @@ import { ubicacionRouter } from "../../internal/ubicacion/router/router";
 
 const renderRoutes = (routes: RouterI[], isAuthenticated: boolean) =>
     routes.map((item, index) => {
-        console.log(item.path);
 
         return (
             <Route
@@ -16,6 +15,7 @@ const renderRoutes = (routes: RouterI[], isAuthenticated: boolean) =>
                 path={item.path}
                 element={<item.element />}
             />
+
         );
     });
 
@@ -24,7 +24,7 @@ export const RouterApp = () => {
         <BrowserRouter>
             <Routes>
                 {/* Layout */}
-                < Route >
+                < Route   >
                     {renderRoutes(usuarioRouter, false)}
                     {renderRoutes(rutaRouter, false)}
                     {renderRoutes(lineaRouter, false)}
